@@ -1,0 +1,16 @@
+name: Example
+on:
+  - push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./
+        with:
+          filename: example.tex
+      - uses: actions/upload-artifact@v1
+        with:
+          name: example
+          path: example.pdf
+
